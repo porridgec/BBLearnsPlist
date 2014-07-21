@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A9905D35197D093800225D15 /* BBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9905D34197D093800225D15 /* BBMainViewController.m */; };
 		A9905D37197D0E0B00225D15 /* BB.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9905D36197D0E0B00225D15 /* BB.plist */; };
+		A9905D39197D144D00225D15 /* bbb.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9905D38197D144D00225D15 /* bbb.plist */; };
 		A9A60F46197D03F20028E1F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A60F45197D03F20028E1F1 /* Foundation.framework */; };
 		A9A60F48197D03F20028E1F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A60F47197D03F20028E1F1 /* CoreGraphics.framework */; };
 		A9A60F4A197D03F20028E1F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A60F49197D03F20028E1F1 /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 		A9905D33197D093800225D15 /* BBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMainViewController.h; sourceTree = "<group>"; };
 		A9905D34197D093800225D15 /* BBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMainViewController.m; sourceTree = "<group>"; };
 		A9905D36197D0E0B00225D15 /* BB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BB.plist; sourceTree = "<group>"; };
+		A9905D38197D144D00225D15 /* bbb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bbb.plist; sourceTree = "<group>"; };
 		A9A60F42197D03F20028E1F1 /* BBLearnsPlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBLearnsPlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A60F45197D03F20028E1F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9A60F47197D03F20028E1F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,7 @@
 				A9A60F55197D03F20028E1F1 /* BBAppDelegate.m */,
 				A9905D33197D093800225D15 /* BBMainViewController.h */,
 				A9905D34197D093800225D15 /* BBMainViewController.m */,
+				A9905D38197D144D00225D15 /* bbb.plist */,
 				A9905D36197D0E0B00225D15 /* BB.plist */,
 				A9A60F57197D03F20028E1F1 /* Images.xcassets */,
 				A9A60F4C197D03F20028E1F1 /* Supporting Files */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A60F50197D03F20028E1F1 /* InfoPlist.strings in Resources */,
+				A9905D39197D144D00225D15 /* bbb.plist in Resources */,
 				A9905D37197D0E0B00225D15 /* BB.plist in Resources */,
 				A9A60F58197D03F20028E1F1 /* Images.xcassets in Resources */,
 			);

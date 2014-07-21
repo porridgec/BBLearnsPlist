@@ -48,16 +48,34 @@
 }
 */
 
+/**
+ *  setup the viewController
+ */
 - (void) setupSelf
 {
     self.view.backgroundColor = [UIColor redColor];
 }
 
+
+/**
+ *  prepare the data for the program
+ */
 - (void)loadData
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"BB" ofType:@"plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     NSLog(@"plist is \n%@\n",data);
+    
+    [data setObject:@"hwfc" forKey:@"team"];
+    //NSLog(@"plist is \n%@\n",data);
+    
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath = [paths objectAtIndex:0];
+    
+    NSString *plistFileName = [plistPath stringByAppendingString:@"/bbcreated.plist"];
+    
+    [data writeToFile:plistFileName atomically:YES];
+    
 }
 
 @end

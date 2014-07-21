@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         [self setupSelf];
+        [self loadData];
     }
     return self;
 }
@@ -50,6 +51,13 @@
 - (void) setupSelf
 {
     self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)loadData
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"BB" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    NSLog(@"plist is \n%@\n",data);
 }
 
 @end

@@ -8,7 +8,10 @@
 
 #import "BBMainViewController.h"
 
-@interface BBMainViewController ()
+@interface BBMainViewController () <UITextFieldDelegate>
+{
+    NSString *text;
+}
 
 @end
 
@@ -54,6 +57,15 @@
 - (void) setupSelf
 {
     self.view.backgroundColor = [UIColor redColor];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(50, 50, 100  , 20)];
+    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    aLabel.text = @"sda";
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.backgroundColor = [UIColor yellowColor];
+    textField.delegate = self;
+    [self.view addSubview:aLabel];
+    [self.view addSubview:textField];
+    
 }
 
 
@@ -64,6 +76,7 @@
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"BB" ofType:@"plist"];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    NSLog(@"%@\n",filePath);
     NSLog(@"plist is \n%@\n",data);
     
     [data setObject:@"hwfc" forKey:@"team"];
@@ -78,4 +91,30 @@
     
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    text = textField.text;
+    NSLog(@"%@\n",text);
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath = [paths objectAtIndex:0];
+    
+    NSString *plistFileName = [plistPath stringByAppendingString:@"/bbcreated.plist"];
+    
+    NSLog(@"%@\n",plistFileName);
+    
+    [data setObject:text forKey:@"team"];
+    [data writeToFile:plistFileName atomically:YES];
+    
+    NSMutableDictionary *localPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:plistFileName];
+    NSLog(@"%@\n",localPlist);
+    
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end
